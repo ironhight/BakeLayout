@@ -1,0 +1,518 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    /* Quan trọng */
+}
+
+html,
+body {
+    font-family: 'Montserrat', sans-serif;
+    /* neu khong dinh nghia 1 rem =16px */
+    font-size: 18px;
+    margin: 0;
+}
+
+header,
+section,
+footer,
+aside,
+nav,
+main,
+article,
+figure {
+    display: block;
+}
+
+.header__content ul li a {
+    text-decoration: none;
+    color: white;
+}
+
+
+/* .header__content ul li {
+    margin: 0 10px;
+} */
+
+.header__content p {
+    color: white;
+    font-size: 2rem;
+}
+
+.header__content ul {
+    display: flex;
+    list-style: none;
+    justify-content: space-around;
+    width: 50%;
+}
+
+
+
+.header__content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 75%;
+    margin: 0 auto;
+    /* padding: 5px 0; */
+    /* mai tim hieu margin */
+}
+
+.header {
+    background-color: #4e2a84;
+    position: fixed;
+    width: 100%;
+    z-index: 1;
+    /* margin: 20px 0; */
+}
+
+.header__content ul li:first-child a {
+    /*tác động vào phần tử a của li đầu tiên*/
+    color: red;
+}
+
+.header__content ul li a:hover {
+    color: red;
+}
+
+.carousel {
+    background-image: url(../img/b3.jpg);
+    height: 700px;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.intro {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+}
+
+.intro__items2 {
+    grid-column: 2/span 2;
+}
+
+.intro__items4 {
+    grid-column: 1/span 2;
+}
+
+.intro__items9 {
+    grid-column: 3/span 2;
+}
+
+.intro__items img {
+    width: 100%;
+    display: block;
+    /* width: auto;
+    height: auto; */
+}
+
+.intro__items {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+/* STATIC */
+.static__content {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    text-align: center;
+    padding: 50px 0;
+    margin: 0 auto;
+}
+
+
+.static .static__item p {
+    font-weight: 500;
+    /* font-size: 20px; */
+}
+
+.static .counter {
+    color: #4e2a84;
+    font-size: 25px;
+}
+
+/* SERVICES */
+.services {
+    background-image: url(../img/s1.jpg);
+
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 500px;
+}
+
+.section__title {
+    text-align: center;
+    /* color: white; */
+    padding: 40px 0;
+    font-size: 40px;
+    font-weight: 400;
+}
+
+.services .section__title {
+    color: white;
+}
+
+.services__content {
+    width: 80%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-around;
+    /* align-items: center; */
+    text-align: center;
+    /* padding: auto; */
+    /* width: 75%; */
+}
+
+
+
+.service__item .circle {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    margin: 0 auto;
+    background-color: white;
+}
+
+.service__item .circle i {
+    line-height: 100px;
+    font-size: 60px;
+    color: #4e2a84;
+}
+
+.service__item .btn--pink {
+    padding: 10px 25px;
+    margin-top: 10px;
+    font-size: 16px;
+    border-radius: 5px;
+    border: 2px solid white;
+    color: white;
+    background-color: #ff0e83;
+    cursor: pointer;
+}
+
+.service__item:hover i {
+    color: #ff0e83;
+}
+
+.btn--pink:hover {
+    background-color: white;
+    color: black;
+}
+
+/* GALLERY */
+.gallery__content {
+    display: grid;
+    grid-template-columns: repeat(4, 1tr);
+    grid-gap: 30px;
+    width: 98%;
+    margin: 0 auto;
+}
+
+.gallery__content .item1 {
+    grid-column: 1/span 2;
+}
+
+.gallery__content .item6 {
+    grid-column: 3/span 2;
+}
+
+/* .gallery__item {
+    margin: 15px;
+} */
+/* cách khác ko dùng grid-gap */
+.gallery__item img {
+    width: 100%;
+    height: 100%;
+    /* muốn hình khớp với nhau thì dùng grid-gap thì mới dùng được height */
+    display: block;
+}
+
+.item1 {
+    position: relative;
+    /*phải cho cái này relative thì mới dùng được absolute ở phần tử con*/
+}
+
+.item1__detail {
+    position: absolute;
+    text-align: right;
+    padding-top: 30px;
+    padding-right: 20px;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    /* z-index: 2; */
+}
+
+.item1__detail p {
+    margin-top: 20px;
+    transition: all 0.5s;
+}
+
+.item1:hover .item1__detail p {
+    margin-top: 0;
+}
+
+.item1__detail .line {
+    height: 5px;
+    width: 100%;
+    background: white;
+    transform: translateY(40px);
+    opacity: 0;
+    transition: all 0.5s;
+}
+
+.item1:hover .item1__detail .line {
+    opacity: 1;
+    transform: translateY(10px);
+}
+
+.item1__detail .gallery__subtitle {
+    position: absolute;
+    bottom: 0;
+    right: 20px;
+    opacity: 0;
+    transition: all 0.5s;
+}
+
+.item1:hover .gallery__subtitle {
+    opacity: 1;
+    bottom: 30px;
+}
+
+/* GALLERY_LINK */
+.gallery__item .gallery__link {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+/* TEAM*/
+.team__section {
+    background-color: #4e2a84;
+}
+
+.team__section .section__title {
+    color: white;
+}
+
+.team__item img {
+    height: 100%;
+    width: 100%;
+    display: block;
+}
+
+.team__content {
+    width: 80%;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 30px;
+}
+
+.team__item {
+    position: relative;
+}
+
+.team__intro {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: #ff0e83;
+    color: white;
+    padding: 30px;
+    /* font-size: 16px; */
+}
+
+.team__detail {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.8);
+
+    display: flex;
+    /*đưa nó vào 1 box từ đó có thể điều chỉnh được chính giữa phần tử cha của nó*/
+    justify-content: center;
+    flex-direction: column;
+
+    color: white;
+    opacity: 0;
+    padding: 0 30px;
+    transition: all 1s;
+}
+
+.team__detail p:first-child {
+    color: #ff0e83;
+    font-size: 20px;
+    margin-bottom: 20px;
+}
+
+.team__detail p:nth-child(2) {
+    margin-bottom: 20px;
+}
+
+.team__detail p:nth-child(3) {
+    margin-bottom: 20px;
+    line-height: 35px;
+    /*chiều cao của các dòng chữ trong thẻ p*/
+}
+
+.team__social {
+    display: flex;
+    /* justify-content: center; */
+}
+
+.team__social-item {
+    border: 1px solid white;
+    width: 50px;
+    height: 50px;
+    margin-right: 20px;
+
+    text-align: center;
+    cursor: pointer;
+}
+
+.team__social-item:hover {
+    border-color: #ff0e83;
+    color: #ff0e83;
+}
+
+.team__social-item i {
+    line-height: 50px;
+}
+
+.team__item:hover .team__intro {
+    display: none;
+}
+
+.team__item:hover .team__detail {
+    opacity: 1;
+}
+
+/* TESTIMONIALS */
+.testimonials__section {
+    background-image: url(../img/cc1.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 500px;
+}
+
+.testimonials__section .section__title {
+    color: white;
+}
+
+.testimonials__title {
+    text-align: center;
+    /* margin-top: 40px; */
+    color: white;
+}
+
+.testimonials__content {
+    text-align: center;
+    border: 2px solid #ff0e83;
+    width: 80%;
+    margin: 0 auto;
+    background-color: rgba(255, 255, 255, 0.5);
+    padding: 50px;
+}
+
+.testimonials__item i {
+    color: #2CBEFF;
+    margin: 0 20px;
+}
+
+.testimonials__author {
+    color: white;
+    /* padding-top: 20px; */
+    margin-top: 20px;
+}
+
+.testimonials__section .owl-dots .owl-dot:focus {
+    outline: none;
+}
+
+.testimonials__section .owl-dots .owl-dot span {
+    background: rgba(0, 0, 0, 0.5);
+}
+
+.testimonials__section .owl-dots .owl-dot.active span {
+    background: #000;
+}
+
+.testimonials__section .owl-dots .owl-dot:hover span {
+    background: #000;
+}
+
+/* CONTACT */
+.contact__content {
+    width: 80%;
+    margin: 0 auto;
+}
+
+.contact__form {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 30px;
+}
+
+.contact__form .contact__textarea {
+    grid-column: 1/span 2;
+}
+
+.contact__form .contact__button {
+    grid-column: 1/span 2;
+}
+
+.contact__group input {
+    border: 1px solid black;
+    width: 100%;
+    padding: 20px;
+    border-radius: 5px;
+
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;
+}
+
+.contact__group input::placeholder {
+    color: red;
+}
+
+.contact__group textarea {
+    border: 1px solid black;
+    width: 100%;
+    padding: 20px;
+    border-radius: 5px;
+
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;
+}
+
+.contact__button button {
+    width: 100%;
+    padding: 20px 0;
+    background-color: #ff0e83;
+}
+
+.contact__button button:hover {
+    background-color: black;
+    color: white;
+}
